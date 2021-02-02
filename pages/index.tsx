@@ -4,6 +4,7 @@ import MetaData from '../components/MetaData';
 import Header from '../components/Header';
 import About from '../components/About';
 import Knowledge from '../components/Knowledge';
+import Links from '../components/Links';
 
 const Home = () => {
     const isSSR = typeof window === 'undefined';
@@ -20,6 +21,7 @@ const Home = () => {
             <Header />
             <About />
             <Knowledge />
+            <Links />
         </div>
     );
 };

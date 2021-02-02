@@ -2,6 +2,7 @@ import React from 'react';
 
 import MetaData from '../components/MetaData';
 import Header from '../components/Header';
+import About from '../components/About';
 
 const Home = () => {
     const isSSR = typeof window === 'undefined';
@@ -16,6 +17,7 @@ const Home = () => {
         <div>
             <MetaData />
             <Header />
+            <About />
         </div>
     );
 };

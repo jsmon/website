@@ -15,7 +15,7 @@ const Knowledge = () => (
             <li>Express.js</li>
             <li>Linux</li>
             <li>npm</li>
-            <li>HTML / CSS</li>
+            <li>HTML</li>
             <li>Heroku</li>
             <li>Git</li>
             <li>GitHub</li>

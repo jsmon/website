@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Links = () => (
+const Links = (): React.ReactElement<{
+    id: 'where-to-find-me';
+}, 'section'> => (
     <section id="where-to-find-me">
         <h2>Where to Find Me</h2>
         <p>My website: <a href="https://jsmon.github.io" target="_blank" rel="noopener noreferrer">jsmon.github.io</a></p>

@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Knowledge = () => (
+const Knowledge = (): React.ReactElement<{
+    id: 'what-i-know';
+}, 'section'> => (
     <section id="what-i-know">
         <h2>What I Know</h2>
         <p>I am familiar with the following technologies:</p>

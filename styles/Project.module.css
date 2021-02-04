@@ -1,0 +1,11 @@
+.technology {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+[data-theme="dark"] .technology {
+    background-color: #222;
+}
+[data-theme="light"] .technology {
+    background-color: #ccc;
+}

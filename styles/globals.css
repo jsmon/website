@@ -7,12 +7,15 @@ html {
     color: #eee;
 }
 
-.main-header {
-    font-size: 2em;
-    text-align: center;
-}
-
 [data-theme="light"] {
     background-color: #eee;
     color: #333;
+}
+
+a {
+    color: #37f;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }

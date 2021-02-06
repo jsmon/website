@@ -11,7 +11,8 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
     const projectsData: ProjectObj[] = [];
     for (let project of projectsSnapshot.docs) {
         const data = project.data() as ProjectObj;
-        data.img = `https://firebasestorage.googleapis.com/v0/b/james-simon-s-website.appspot.com/o/${data.img}?alt=media`;
+        data.img.dark = `https://firebasestorage.googleapis.com/v0/b/james-simon-s-website.appspot.com/o/${data.img.dark}?alt=media`;
+        data.img.light = `https://firebasestorage.googleapis.com/v0/b/james-simon-s-website.appspot.com/o/${data.img.light}?alt=media`;
         data.id = project.id;
         projectsData.push(data);
     }

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from '../styles/ToggleTheme.module.css';
-
 interface ToggleThemeProps {
     theme: 'light' | 'dark';
     clickHandler: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
@@ -14,7 +12,7 @@ const ToggleTheme = ({ theme, clickHandler }: ToggleThemeProps): React.ReactElem
     className: string;
 }, 'img'> => (
     <img
-        className={styles.toggleThemeImg}
+        className="p-2 w-10"
         src={theme === 'dark' ? '/images/sun.png' : '/images/moon.png'}
         alt={`A ${theme === 'dark' ? 'sun' : 'moon'}, indicating if you click here you will switch to ${theme === 'dark' ? 'light' : 'dark'} theme.`}
         onClick={clickHandler}

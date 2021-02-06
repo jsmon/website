@@ -8,13 +8,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.4",
     "firebase-admin": "^9.4.2",
     "next": "10.0.6",
+    "nodemailer": "^6.4.17",
+    "postcss": "^8.2.4",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
+    "@types/nodemailer": "^6.4.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "dotenv": "^8.2.0",

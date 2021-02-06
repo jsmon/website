@@ -12,7 +12,7 @@ const MetaData = () => (
         <meta name="description" content="James Simon is a full stack web developer who uses React.js, Next.js, Node.js, TypeScript, JavaScript, and more." />
         <meta name="subject" content="Portfolio" />
         <meta name="language" content="en" />
-        <meta name="revised" content="Saturday, February 6th, 2021, 2:26 pm" />
+        <meta name="revised" content="Saturday, February 6th, 2021, 7:21 pm" />
         <meta name="author" content="James Simon, jsmon.dev@gmail.com" />
         <meta name="designer" content="James Simon, jsmon.dev@gmail.com" />
         <meta name="reply-to" content="jsmon.dev@gmail.com" />
@@ -21,9 +21,9 @@ const MetaData = () => (
         <meta name="identifier-URL" content="https://website.jsmon.vercel.app" />
 
         <meta property="og:title" content="James Simon" />
-        <meta property="og:type" content="portfolio website" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://website.jsmon.vercel.app" />
-        <meta property="og:site_name" content="GitHub Pages" />
+        <meta property="og:site_name" content="James Simon" />
         <meta property="og:description" content="James Simon is a full stack web developer who uses React.js, Next.js, Node.js, TypeScript, JavaScript, and more." />
         <meta property="og:email" content="jsmon.dev@gmail.com" />
         <meta property="og:locale" content="en_GB" />

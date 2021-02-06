@@ -6,7 +6,7 @@ const Links = (): React.ReactElement<{
 }, 'section'> => (
     <section id="where-to-find-me" className="p-2">
         <h2 className="font-bold text-2xl">Where to Find Me</h2>
-        <p>My website: <a className="text-blue-600 hover:underline" href="https://jsmon.github.io" target="_blank" rel="noopener noreferrer">jsmon.github.io</a></p>
+        <p>My website: <a className="text-blue-600 hover:underline" href="https://website.jsmon.vercel.app" target="_blank" rel="noopener noreferrer">website.jsmon.vercel.app</a></p>
         <p>GitHub: <a className="text-blue-600 hover:underline" href="https://github.com/jsmon" target="_blank" rel="noopener noreferrer">jsmon</a></p>
         <p>StackOverflow: <a className="text-blue-600 hover:underline" href="https://stackoverflow.com/users/15100869" target="_blank" rel="noopener noreferrer">James Simon</a></p>
         <p>npm: <a className="text-blue-600 hover:underline" href="https://www.npmjs.com/~jsmon1" target="_blank" rel="noopener noreferrer">jsmon1</a></p>

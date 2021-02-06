@@ -17,12 +17,12 @@ const MetaData = () => (
         <meta name="designer" content="James Simon, jsmon.dev@gmail.com" />
         <meta name="reply-to" content="jsmon.dev@gmail.com" />
         <meta name="owner" content="James Simon, jsmon.dev@gmail.com" />
-        <meta name="url" content="https://jsmon.github.io" />
-        <meta name="identifier-URL" content="https://jsmon.github.io" />
+        <meta name="url" content="https://website.jsmon.vercel.app" />
+        <meta name="identifier-URL" content="https://website.jsmon.vercel.app" />
 
         <meta property="og:title" content="James Simon" />
         <meta property="og:type" content="portfolio website" />
-        <meta property="og:url" content="https://jsmon.github.io" />
+        <meta property="og:url" content="https://website.jsmon.vercel.app" />
         <meta property="og:site_name" content="GitHub Pages" />
         <meta property="og:description" content="James Simon is a full stack web developer who uses React.js, Next.js, Node.js, TypeScript, JavaScript, and more." />
         <meta property="og:email" content="jsmon.dev@gmail.com" />

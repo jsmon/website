@@ -18,7 +18,7 @@ const Contact = (): React.ReactElement<{
         const subject = subjectInput.current!.value;
         const content = contentInput.current!.value;
 
-        fetch(process.env.NODE_ENV === 'production' ? 'https://jsmon.github.io/api/email' : 'http://localhost:3000/api/email', {
+        fetch(process.env.NODE_ENV === 'production' ? 'https://website.jsmon.vercel.app/api/email' : 'http://localhost:3000/api/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

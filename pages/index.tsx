@@ -9,14 +9,11 @@ import Knowledge from '../components/Knowledge';
 import Links from '../components/Links';
 import ToggleTheme from '../components/ToggleTheme';
 import Projects from '../components/Projects';
+import Contact from '../components/Contact'
 
 const Home = ({ projects }: { projects: Project[] }) => {
     const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-    const clickHandler = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark');
-        localStorage.setItem('theme', theme);
-        document.querySelector('html')!.dataset.theme = theme;
-    };
+    const clickHandler = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
     useEffect(() => {
         setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) as 'light' | 'dark');
@@ -24,7 +21,8 @@ const Home = ({ projects }: { projects: Project[] }) => {
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
-        document.querySelector('html')!.dataset.theme = theme;
+        document.querySelector('html')!.classList.add(theme);
+        document.querySelector('html')!.classList.remove(theme === 'dark' ? 'light' : 'dark');
     }, [theme]);
 
     return (
@@ -33,8 +31,9 @@ const Home = ({ projects }: { projects: Project[] }) => {
             <Header />
             <About />
             <Knowledge />
-            <Projects projects={projects} />
+            <Projects theme={theme} projects={projects} />
             <Links />
+            <Contact />
             <ToggleTheme theme={theme} clickHandler={clickHandler} />
         </div>
     );

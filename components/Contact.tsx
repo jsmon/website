@@ -39,7 +39,7 @@ const Contact = (): React.ReactElement<{
                 <input ref={nameInput} type="text" name="name" id="name" autoComplete="name" placeholder="Your name" />
                 <input ref={emailInput} type="email" name="email" id="email" autoComplete="email" placeholder="Your email address" />
                 <input ref={subjectInput} type="text" name="subject" id="subject" placeholder="Subject" />
-                <textarea ref={contentInput} name="content" id="content" placeholder="Email content"></textarea>
+                <textarea required ref={contentInput} name="content" id="content" placeholder="Email content"></textarea>
                 <button type="submit">Submit</button>
             </form>
         </>

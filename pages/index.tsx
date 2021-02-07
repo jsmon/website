@@ -40,7 +40,7 @@ const Home = ({ projects }: { projects: Project[] }) => {
 };
 
 export const getServerSideProps = async () => {
-    const res = await fetch(`${location.protocol}//${location.hostname}/api/projects`);
+    const res = await fetch(`${window.location.protocol}//${window.location.hostname}/api/projects`);
     const data = await res.json() as { projects: Project[] };
 
     return {

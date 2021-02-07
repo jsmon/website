@@ -18,7 +18,7 @@ const Contact = (): React.ReactElement<{
         const subject = subjectInput.current!.value;
         const content = contentInput.current!.value;
 
-        fetch(`${location.protocol}//${location.hostname}/api/email`, {
+        fetch(`${window.location.protocol}//${window.location.hostname}/api/email`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

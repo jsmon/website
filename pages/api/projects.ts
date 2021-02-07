@@ -4,7 +4,7 @@ import admin from '../../firebase';
 
 import { ProjectObj } from '../../components/Projects';
 
-const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (_req: NextApiRequest, res: NextApiResponse<ProjectObj[]>) => {
     const db = admin.firestore();
 
     const projectsSnapshot = await db.collection('projects').get();
@@ -16,7 +16,7 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
         data.id = project.id;
         projectsData.push(data);
     }
-    res.status(200).json({ projects: projectsData });
+    res.json(projectsData);
 };
 
 export default handler;

@@ -40,7 +40,7 @@ const Home = ({ projects }: { projects: Project[] }) => {
 };
 
 export const getServerSideProps = async () => {
-    const res = await fetch(process.env.NODE_ENV === 'production' ? 'https://website.jsmon.vercel.app/api/projects' : 'http://localhost:3000/api/projects');
+    const res = await fetch(`${location.protocol}//${location.hostname}/api/projects`);
     const data = await res.json() as { projects: Project[] };
 
     return {

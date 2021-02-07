@@ -53,7 +53,7 @@ const Contact = (): React.ReactElement<{
                     <span className="text-gray-700 dark:text-gray-300">Content</span>
                     <textarea required className="mt-1 block w-full dark:bg-gray-700" ref={contentInput} name="content" id="content" placeholder="Content"></textarea>
                 </label>
-                <button type="submit" className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700">Submit</button>
+                <button type="submit" className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-800">Submit</button>
             </div>
         </form>
     );

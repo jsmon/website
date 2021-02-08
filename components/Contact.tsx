@@ -18,14 +18,20 @@ const Contact = (): React.ReactElement<{
         const subject = subjectInput.current!.value;
         const content = contentInput.current!.value;
 
-        fetch(`${window.location.protocol}//${window.location.hostname}/api/email`, {
+        fetch(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/api/email`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ name, email, subject, content })
         })
-            .then(() => successElement.current!.innerText = 'Email successfully sent')
+            .then(() => {
+                successElement.current!.innerText = 'Email successfully sent';
+                nameInput.current!.value = '';
+                emailInput.current!.value = '';
+                subjectInput.current!.value = '';
+                contentInput.current!.value = '';
+            })
             .catch(reason => {
                 console.error(reason);
                 successElement.current!.innerText = `An error occoured. Please try again.`;
@@ -35,7 +41,6 @@ const Contact = (): React.ReactElement<{
     return (
         <form onSubmit={submitHandler} className="mt-8 max-w-md px-2">
             <h2 className="font-bold text-2xl">Contact Me</h2>
-            <div ref={successElement} className="email-success"></div>
             <div className="grid grid-cols-1 gap-6">
                 <label className="block">
                     <span className="text-gray-700 dark:text-gray-300">Full name</span>
@@ -55,6 +60,7 @@ const Contact = (): React.ReactElement<{
                 </label>
                 <button type="submit" className="py-2 px-4 font-semibold rounded-lg shadow-md text-white bg-gray-600 hover:bg-gray-500 dark:hover:bg-gray-800">Submit</button>
             </div>
+            <div ref={successElement} className="email-success"></div>
         </form>
     );
 };

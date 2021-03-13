@@ -7,7 +7,7 @@ const NotFoundPage = (): React.ReactElement<{}, 'main'> => {
 
     useEffect(() => {
         setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as 'light' | 'dark');
-        if (process.env.NODE_ENV === 'production' && window.location.hostname !== 'jsmon.vercel.app') {
+        if (process.env.NODE_ENV === 'production' && !['jsmon.vercel.app', 'jsmon-preview.vercel.app'].includes(window.location.hostname)) {
             window.location.replace(`https://jsmon.vercel.app${window.location.pathname}`);
         }
     }, []);

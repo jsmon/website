@@ -1,22 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import admin from '../../firebase';
+import * as mongoose from 'mongoose';
 
-import { ProjectObj } from '../../components/Projects';
+import ProjectObj from '../../types/project';
+import ProjectSchema, { IProject } from '../../models/project';
 
 const handler = async (_req: NextApiRequest, res: NextApiResponse<ProjectObj[]>) => {
-    const db = admin.firestore();
+    const projectConnection = await mongoose.createConnection(process.env.DATABASE_URL!, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+    const Project: mongoose.Model<IProject> = projectConnection.models.Project || projectConnection.model('Project', ProjectSchema);
 
-    const projectsSnapshot = await db.collection('projects').get();
-    const projectsData: ProjectObj[] = [];
-    for (let project of projectsSnapshot.docs) {
-        const data = project.data() as ProjectObj;
-        data.img.dark = `https://firebasestorage.googleapis.com/v0/b/james-simon-s-website.appspot.com/o/${data.img.dark}?alt=media`;
-        data.img.light = `https://firebasestorage.googleapis.com/v0/b/james-simon-s-website.appspot.com/o/${data.img.light}?alt=media`;
-        data.id = project.id;
-        projectsData.push(data);
-    }
-    res.json(projectsData);
+    const projects = await Project.find();
+
+    res.json(projects);
 };
 
 export default handler;

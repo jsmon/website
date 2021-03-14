@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { ProjectObj as Project } from '../components/Projects';
+import { IProject as Project } from '../models/project';
 
 import MetaData from '../components/MetaData';
 import Header from '../components/Header';

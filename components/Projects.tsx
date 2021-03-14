@@ -2,17 +2,7 @@ import React from 'react';
 
 import Project from './Project';
 
-export interface ProjectObj {
-    id: string;
-    name: string;
-    img: {
-        dark: string;
-        light: string;
-    };
-    technologies: string[];
-    description: string;
-    link: string;
-}
+import { IProject as ProjectObj } from '../models/project';
 
 interface ProjectsProps {
     projects: ProjectObj[];

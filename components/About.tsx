@@ -7,7 +7,7 @@ const About = (): React.ReactElement<{
     <section id="about-me" className="p-2">
         <h2 className="font-bold text-2xl">About Me</h2>
         <main>
-            <p>I'm a full stack developer and I develop web applications in my spare time. Most of my projects use TypeScript, React.js, Node.js, and Next.js. My dream job is to be a software engineer at Google.</p>
+            <p>I make websites, APIs and other tools with TypeScript / JavaScript, Node.js, React.js, Next.js, and more. My dream job is to be a software engineer at Google.</p>
         </main>
     </section>
 );

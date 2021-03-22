@@ -7,7 +7,7 @@ const Links = (): React.ReactElement<{
     <section id="where-to-find-me" className="p-2">
         <h2 className="font-bold text-2xl">Where to Find Me</h2>
         <ul>
-            <li>My website: <a className="text-blue-600 hover:underline focus:underline" href="https://jsmon.vercel.app/" target="_blank" rel="noopener noreferrer">jsmon.vercel.app</a></li>
+            <li>My website: <a className="text-blue-600 hover:underline focus:underline" href="https://jsmon.dev/" target="_blank" rel="noopener noreferrer">jsmon.dev</a></li>
             <li>GitHub: <a className="text-blue-600 hover:underline focus:underline" href="https://github.com/jsmon" target="_blank" rel="noopener noreferrer">@jsmon</a></li>
             <li>LinkedIn: <a className="text-blue-600 hover:underline focus:underline" href="https://www.linkedin.com/in/james-simon-a19baa206" target="_blank" rel="noopener noreferrer">James Simon</a></li>
             <li>Twitter: <a className="text-blue-600 hover:underline focus:underline" href="https://twitter.com/jsmondev" target="_blank" rel="noopener noreferrer">@jsmondev</a></li>

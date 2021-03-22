@@ -17,8 +17,8 @@ const Home = ({ projects }: { projects: Project[] }) => {
 
     useEffect(() => {
         setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as 'light' | 'dark');
-        if (process.env.NODE_ENV === 'production' && !['jsmon.vercel.app', 'jsmon-preview.vercel.app'].includes(window.location.hostname)) {
-            window.location.replace('https://jsmon.vercel.app/');
+        if (process.env.NODE_ENV === 'production' && !['jsmon.dev', 'preview.jsmon.dev'].includes(window.location.hostname)) {
+            window.location.replace('https://jsmon.dev/');
         }
     }, []);
 
@@ -43,7 +43,7 @@ const Home = ({ projects }: { projects: Project[] }) => {
 };
 
 export const getServerSideProps = async () => {
-    const res = await fetch(process.env.NODE_ENV === 'production' ? 'https://jsmon.vercel.app/api/projects' : 'http://localhost:3000/api/projects');
+    const res = await fetch(process.env.NODE_ENV === 'production' ? 'https://jsmon.dev/api/projects' : 'http://localhost:3000/api/projects');
     const data = await res.json() as Project[];
 
     return {

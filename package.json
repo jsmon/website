@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/jsmon/website.git"
   },
-  "homepage": "https://jsmon.vercel.app/",
+  "homepage": "https://jsmon.dev/",
   "keywords": [
     "james",
     "simon",
@@ -24,7 +24,7 @@
   "author": {
     "name": "James Simon",
     "email": "jsmon.dev@gmail.com",
-    "url": "https://jsmon.vercel.app/"
+    "url": "https://jsmon.dev/"
   },
   "license": "MIT",
   "bugs": {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProjectObj from '../types/project';
+import ProjectObj from '@custom-types/project';
 
 interface ProjectProps {
     project: ProjectObj;

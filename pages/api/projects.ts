@@ -2,8 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import * as mongoose from 'mongoose';
 
-import ProjectObj from '../../types/project';
-import ProjectSchema, { IProject } from '../../models/project';
+import ProjectObj from '@custom-types/project';
+import ProjectSchema, { IProject } from '@models/project';
 
 const handler = async (_req: NextApiRequest, res: NextApiResponse<ProjectObj[]>) => {
     const projectConnection = await mongoose.createConnection(process.env.DATABASE_URL!, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-import { IProject as Project } from '../models/project';
+import { IProject as Project } from '@models/project';
 
-import MetaData from '../components/MetaData';
-import Header from '../components/Header';
-import About from '../components/About';
-import Knowledge from '../components/Knowledge';
-import Links from '../components/Links';
-import ToggleTheme from '../components/ToggleTheme';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact'
+import MetaData from '@components/MetaData';
+import Header from '@components/Header';
+import About from '@components/About';
+import Knowledge from '@components/Knowledge';
+import Links from '@components/Links';
+import ToggleTheme from '@components/ToggleTheme';
+import Projects from '@components/Projects';
+import Contact from '@components/Contact'
 
 const Home = ({ projects }: { projects: Project[] }) => {
     const [theme, setTheme] = useState<'dark' | 'light'>('dark');

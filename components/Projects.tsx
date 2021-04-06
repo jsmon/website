@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Project from './Project';
+import Project from '@components/Project';
 
-import { IProject as ProjectObj } from '../models/project';
+import { IProject as ProjectObj } from '@models/project';
 
 interface ProjectsProps {
     projects: ProjectObj[];

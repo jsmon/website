@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 
-import Project from '../types/project';
+import Project from '@custom-types/project';
 
 export interface IProject extends mongoose.Document, Project {}
 

@@ -14,7 +14,7 @@ const Links = (): React.ReactElement<{
             <li>StackOverflow: <a className="text-blue-600 hover:underline focus:underline" href="https://stackoverflow.com/users/15100869" target="_blank" rel="noopener noreferrer">James Simon</a></li>
             <li>npm: <a className="text-blue-600 hover:underline focus:underline" href="https://www.npmjs.com/~jsmon1" target="_blank" rel="noopener noreferrer">jsmon1</a></li>
             <li>Pluralsight: <a className="text-blue-600 hover:underline focus:underline" href="https://app.pluralsight.com/profile/james-simon-20" target="_blank" rel="noopener noreferrer">James Simon</a></li>
-            <li>Email me: <a className="text-blue-600 hover:underline focus:underline" href="mailto:jsmon.dev@gmail.com" target="_blank" rel="noopener noreferrer">jsmon.dev@gmail.com</a></li>
+            <li>Email: <a className="text-blue-600 hover:underline focus:underline" href="mailto:jsmon.dev@gmail.com" target="_blank" rel="noopener noreferrer">jsmon.dev@gmail.com</a></li>
         </ul>
     </section>
 );

@@ -89,8 +89,5 @@ out
 # Apple Desktop Services Store file
 .DS_Store
 
-# Visual Studio Code settings
-.vscode/
-
 # Public SSL Certificate File
 *.pem

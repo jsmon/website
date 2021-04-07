@@ -2,3 +2,6 @@
 *.jsx linguist-language=TypeScript
 *.ts linguist-language=TypeScript
 *.tsx linguist-language=TypeScript
+
+.eslintrc linguist-language=JSON
+.prettierrc linguist-language=JSON

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from 'next/head';
 
-const MetaData = () => (
+const MetaData = (): JSX.Element => (
     <Head>
         { /* Yes, I tried to use every meta tag, and loads of keywords. SEO, right? */ }
         <title>James Simon</title>

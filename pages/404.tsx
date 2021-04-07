@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 
-const NotFoundPage = (): React.ReactElement<{}, 'main'> => {
+const NotFoundPage = (): React.ReactElement<Record<string, never>, 'main'> => {
     const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
     useEffect(() => {
@@ -14,8 +14,8 @@ const NotFoundPage = (): React.ReactElement<{}, 'main'> => {
 
     useEffect(() => {
         localStorage.setItem('theme', theme);
-        document.querySelector('html')!.classList.add(theme);
-        document.querySelector('html')!.classList.remove(theme === 'dark' ? 'light' : 'dark');
+        document.querySelector('html')?.classList.add(theme);
+        document.querySelector('html')?.classList.remove(theme === 'dark' ? 'light' : 'dark');
     }, [theme]);
 
     return (

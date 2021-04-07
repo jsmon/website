@@ -13,10 +13,10 @@ const Contact = (): React.ReactElement<{
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const name = nameInput.current!.value;
-        const email = emailInput.current!.value;
-        const subject = subjectInput.current!.value;
-        const content = contentInput.current!.value;
+        const name = nameInput.current?.value;
+        const email = emailInput.current?.value;
+        const subject = subjectInput.current?.value;
+        const content = contentInput.current?.value;
 
         fetch(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/api/email`, {
             method: 'POST',
@@ -26,15 +26,20 @@ const Contact = (): React.ReactElement<{
             body: JSON.stringify({ name, email, subject, content })
         })
             .then(() => {
-                successElement.current!.innerText = 'Email successfully sent';
-                nameInput.current!.value = '';
-                emailInput.current!.value = '';
-                subjectInput.current!.value = '';
-                contentInput.current!.value = '';
+                if (!successElement.current || !nameInput.current || !emailInput.current || !subjectInput.current || !contentInput.current) return;
+
+                successElement.current.innerText = 'Email successfully sent';
+                nameInput.current.value = '';
+                emailInput.current.value = '';
+                subjectInput.current.value = '';
+                contentInput.current.value = '';
             })
             .catch(reason => {
                 console.error(reason);
-                successElement.current!.innerText = `An error occoured. Please try again.`;
+
+                if (!successElement.current) return;
+
+                successElement.current.innerText = 'An error occoured. Please try again. Check the logs for more information';
             });
     };
 

@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import nodemailer from 'nodemailer';
 
-const handler = (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (req: NextApiRequest, res: NextApiResponse): void => {
     if (req.method === 'GET') {
         return res.json({ email: 'jsmon.dev@gmail.com' });
     } else if (req.method !== 'POST') {

@@ -1,22 +1,19 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+
 interface ToggleThemeProps {
     theme: 'light' | 'dark';
-    clickHandler: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
+    clickHandler: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
 const ToggleTheme = ({ theme, clickHandler }: ToggleThemeProps): React.ReactElement<{
-    src: `/images/${'sun' | 'moon'}.png`;
-    alt: 'A sun, indicating if you click here you will switch to light theme.' | 'A moon, indicating if you click here you will switch to dark theme.';
-    onClick: (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => void;
+    children: React.ReactNode;
     className: string;
-}, 'img'> => (
-    <img
-        className="p-2 w-10"
-        src={theme === 'dark' ? '/images/sun.png' : '/images/moon.png'}
-        alt={`A ${theme === 'dark' ? 'sun' : 'moon'}, indicating if you click here you will switch to ${theme === 'dark' ? 'light' : 'dark'} theme.`}
-        onClick={clickHandler}
-    />
+    onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+}, 'i'> => (
+    <i className="text-xl cursor-pointer" onClick={clickHandler}><FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} /></i>
 );
 
 export default ToggleTheme;

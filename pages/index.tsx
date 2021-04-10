@@ -34,12 +34,12 @@ const Home = ({ projects }: { projects: Project[] }): React.ReactElement<{
         <div>
             <MetaData />
             <Header />
+            <ToggleTheme theme={theme} clickHandler={clickHandler} />
             <About />
             <Knowledge />
             <Projects theme={theme} projects={projects} />
             <Links />
             <Contact />
-            <ToggleTheme theme={theme} clickHandler={clickHandler} />
         </div>
     );
 };

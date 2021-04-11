@@ -1,12 +1,14 @@
 import React from 'react';
 
+import Theme from '@custom-types/theme';
+
 import Project from '@components/Project';
 
 import { IProject as ProjectObj } from '@models/project';
 
 interface ProjectsProps {
     projects: ProjectObj[];
-    theme: 'light' | 'dark';
+    theme: Theme;
 }
 
 const Projects = ({ projects, theme }: ProjectsProps): React.ReactElement<{

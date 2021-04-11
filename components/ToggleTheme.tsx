@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Theme from '@custom-types/theme';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 interface ToggleThemeProps {
-    theme: 'light' | 'dark';
+    theme: Theme;
     clickHandler: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 

@@ -2,27 +2,34 @@ import React, { useState, useEffect } from 'react';
 
 import Head from 'next/head';
 
+import Theme from '@custom-types/theme';
+
 const NotFoundPage = (): React.ReactElement<Record<string, never>, 'main'> => {
-    const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+    const [theme, setTheme] = useState<Theme>('dark');
+    const [isSystemTheme, setIsSystemTheme] = useState(true);
 
     useEffect(() => {
-        setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as 'light' | 'dark');
+        if (localStorage.getItem('theme')) setIsSystemTheme(false);
+
+        setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as Theme);
         if (process.env.NODE_ENV === 'production' && !['jsmon.dev', 'preview.jsmon.dev'].includes(window.location.hostname)) {
             window.location.replace(`https://jsmon.dev${window.location.pathname}`);
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        if (!isSystemTheme) localStorage.setItem('theme', theme);
+
         document.querySelector('html')?.classList.add(theme);
         document.querySelector('html')?.classList.remove(theme === 'dark' ? 'light' : 'dark');
-    }, [theme]);
+    }, [theme, isSystemTheme]);
 
     return (
         <main>
             <Head>
                 <title>404 | Not Found</title>
             </Head>
+
             <header className="text-5xl text-center font-bold p-3.5">
                 <h1>404 Page Not Found</h1>
             </header>

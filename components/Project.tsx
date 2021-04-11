@@ -1,10 +1,11 @@
 import React from 'react';
 
+import Theme from '@custom-types/theme';
 import ProjectObj from '@custom-types/project';
 
 interface ProjectProps {
     project: ProjectObj;
-    theme: 'dark' | 'light';
+    theme: Theme;
 }
 
 const Project = ({ project, theme }: ProjectProps): React.ReactElement<{

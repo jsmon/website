@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { IProject as Project } from '@models/project';
 
+import Theme from '@custom-types/theme';
+
 import MetaData from '@components/MetaData';
 import Header from '@components/Header';
 import About from '@components/About';
@@ -14,21 +16,26 @@ import Contact from '@components/Contact';
 const Home = ({ projects }: { projects: Project[] }): React.ReactElement<{
     children: React.ReactNode;
 }, 'div'> => {
-    const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+    const [theme, setTheme] = useState<Theme>('dark');
+    const [isSystemTheme, setIsSystemTheme] = useState(true);
+
     const clickHandler = () => setTheme(theme === 'dark' ? 'light' : 'dark');
 
     useEffect(() => {
-        setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as 'light' | 'dark');
+        if (localStorage.getItem('theme')) setIsSystemTheme(false);
+
+        setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as Theme);
         if (process.env.NODE_ENV === 'production' && !['jsmon.dev', 'preview.jsmon.dev'].includes(window.location.hostname)) {
             window.location.replace('https://jsmon.dev/');
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        if (!isSystemTheme) localStorage.setItem('theme', theme);
+
         document.querySelector('html')?.classList.add(theme);
         document.querySelector('html')?.classList.remove(theme === 'dark' ? 'light' : 'dark');
-    }, [theme]);
+    }, [theme, isSystemTheme]);
 
     return (
         <div>

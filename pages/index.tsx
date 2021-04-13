@@ -25,9 +25,6 @@ const Home = ({ projects }: { projects: Project[] }): React.ReactElement<{
         if (localStorage.getItem('theme')) setIsSystemTheme(false);
 
         setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as Theme);
-        if (process.env.NODE_ENV === 'production' && !['jsmon.dev', 'preview.jsmon.dev'].includes(window.location.hostname)) {
-            window.location.replace('https://jsmon.dev/');
-        }
     }, []);
 
     useEffect(() => {

@@ -12,9 +12,6 @@ const NotFoundPage = (): React.ReactElement<Record<string, never>, 'main'> => {
         if (localStorage.getItem('theme')) setIsSystemTheme(false);
 
         setTheme((localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')) as Theme);
-        if (process.env.NODE_ENV === 'production' && !['jsmon.dev', 'preview.jsmon.dev'].includes(window.location.hostname)) {
-            window.location.replace(`https://jsmon.dev${window.location.pathname}`);
-        }
     }, []);
 
     useEffect(() => {

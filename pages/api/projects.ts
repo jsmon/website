@@ -14,6 +14,8 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse<ProjectObj[]>)
     const projects = await Project.find();
 
     res.json(projects);
+
+    return await projectConnection.close();
 };
 
 export default handler;

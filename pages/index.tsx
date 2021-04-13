@@ -19,7 +19,10 @@ const Home = ({ projects }: { projects: Project[] }): React.ReactElement<{
     const [theme, setTheme] = useState<Theme>('dark');
     const [isSystemTheme, setIsSystemTheme] = useState(true);
 
-    const clickHandler = () => setTheme(theme === 'dark' ? 'light' : 'dark');
+    const clickHandler = () => {
+        setIsSystemTheme(false);
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
 
     useEffect(() => {
         if (localStorage.getItem('theme')) setIsSystemTheme(false);

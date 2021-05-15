@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Link from 'next/link';
-
 import MetaData from '@components/Course/MetaData';
 import Header from '@components/Course/Header';
 

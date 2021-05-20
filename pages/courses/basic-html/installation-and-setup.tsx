@@ -7,8 +7,9 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
     children: React.ReactNode;
     className: string;
 }, 'div'> => {
-    const description = 'What software do you need to become a web developer?';
-    const imageUrl = 'https://jsmon.dev/courses/basic-html/thumbnails/lesson-0.png';
+    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.NODE_ENV === 'test' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
+    const description = 'What software do you need to be a web developer?';
+    const imageUrl = `${domain}/courses/basic-html/thumbnails/lesson-0.png` as `${typeof domain}/courses/basic-html/thumbnails/lesson-0.png`;
     const imageAlt = "The thumbnail for the first lesson in James Simon's Basic HTML Course.";
 
     return (
@@ -18,7 +19,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
                 description={description}
                 imageUrl={imageUrl}
                 imageAlt={imageAlt}
-                url="https://jsmon.dev/courses/basic-html/installation-and-setup"
+                url={`${domain}/courses/basic-html/installation-and-setup` as `${typeof domain}/courses/basic-html/installation-and-setup`}
                 tags={['Programming', 'Web Development', 'HTML']}
                 datePublished="2021-05-15"
                 dateModified="2021-05-15"
@@ -27,7 +28,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
             <Header
                 author={{
                     name: 'James Simon',
-                    image: 'https://jsmon.dev/images/me.png',
+                    image: `${domain}/images/me.png` as `${typeof domain}/images/me.png`,
                     link: 'https://www.youtube.com/channel/UCtwZM_In4nRrNn1Zd5qjupw'
                 }}
                 date={new Date(2021, 4, 15)}

@@ -7,7 +7,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
     children: React.ReactNode;
     className: string;
 }, 'div'> => {
-    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.NODE_ENV === 'test' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
+    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.NODE_ENV as string === 'preview' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
     const description = 'What software do you need to be a web developer?';
     const imageUrl = `${domain}/courses/basic-html/thumbnails/lesson-0.png` as `${typeof domain}/courses/basic-html/thumbnails/lesson-0.png`;
     const imageAlt = "The thumbnail for the first lesson in James Simon's Basic HTML Course.";

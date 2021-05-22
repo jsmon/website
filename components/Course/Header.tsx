@@ -4,7 +4,7 @@ interface Props {
     children: string;
     author: {
         name: string;
-        image: `http${'s' | ''}://${string}`;
+        image: `/${string}`;
         link: `http${'s' | ''}://${string}`;
     };
     date: Date;

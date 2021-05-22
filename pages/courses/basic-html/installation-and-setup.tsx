@@ -28,7 +28,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
             <Header
                 author={{
                     name: 'James Simon',
-                    image: '/images/me.png',
+                    image: '/images/me.svg',
                     link: 'https://www.youtube.com/channel/UCtwZM_In4nRrNn1Zd5qjupw'
                 }}
                 date={new Date(2021, 4, 15)}

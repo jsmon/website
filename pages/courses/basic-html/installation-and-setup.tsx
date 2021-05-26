@@ -7,9 +7,9 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
     children: React.ReactNode;
     className: string;
 }, 'div'> => {
-    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.NODE_ENV as string === 'preview' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
+    const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.VERCEL_ENV === 'preview' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
     const description = 'What software do you need to be a web developer?';
-    const imageUrl = '/courses/basic-html/thumbnails/lesson-0.png';
+    const imageUrl = `${domain}/courses/basic-html/thumbnails/lesson-0.png` as `${typeof domain}/courses/basic-html/thumbnails/lesson-0.png`;
     const imageAlt = "The thumbnail for the first lesson in James Simon's Basic HTML Course.";
 
     return (
@@ -17,7 +17,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
             <MetaData
                 title="Installation and setup | Basic HTML Course - Lesson 0"
                 description={description}
-                imageUrl={`${domain}/${imageUrl}` as `${typeof domain}${typeof imageUrl}`}
+                imageUrl={imageUrl}
                 imageAlt={imageAlt}
                 url={`${domain}/courses/basic-html/installation-and-setup` as `${typeof domain}/courses/basic-html/installation-and-setup`}
                 tags={['Programming', 'Web Development', 'HTML']}
@@ -28,7 +28,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
             <Header
                 author={{
                     name: 'James Simon',
-                    image: '/images/me.svg',
+                    image: `${domain}/images/me.svg` as `${typeof domain}/images/me.svg`,
                     link: 'https://www.youtube.com/channel/UCtwZM_In4nRrNn1Zd5qjupw'
                 }}
                 date={new Date(2021, 4, 15)}

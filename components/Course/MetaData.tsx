@@ -29,7 +29,7 @@ ${Exclude<`${Digit<3>}${Digit<10>}` | `3${Digit<2>}`, '00'>}`;
 interface Props {
     title: `${string} | ${string} - Lesson ${string}`;
     description: string;
-    imageUrl: `${`https://${'next.' | ''}jsmon.dev` | 'http://localhost:3000'}/courses/${string}/thumbnails/lesson-${Digit | `${Exclude<Digit, 0>}${Digit}${Digit | ''}`}.png`;
+    imageUrl: `${`https://${'next.' | ''}jsmon.dev` | 'http://localhost:3000'}/courses/${string}/thumbnails/lesson-${Digit | `${Exclude<Digit, 0>}${Digit}${Digit | ''}`}.svg`;
     imageAlt: string;
     url: `${`https://${'next.' | ''}jsmon.dev` | 'http://localhost:3000'}/courses/${string}/${string}`;
     tags: string[];

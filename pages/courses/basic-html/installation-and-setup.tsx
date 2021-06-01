@@ -9,7 +9,7 @@ const HTMLInstallationAndSetup = (): React.ReactElement<{
 }, 'div'> => {
     const domain = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ( process.env.VERCEL_ENV === 'preview' ? 'https://next.jsmon.dev' : 'https://jsmon.dev');
     const description = 'What software do you need to be a web developer?';
-    const imageUrl = `${domain}/courses/basic-html/thumbnails/lesson-0.png` as `${typeof domain}/courses/basic-html/thumbnails/lesson-0.png`;
+    const imageUrl = `${domain}/courses/basic-html/thumbnails/lesson-0.svg` as `${typeof domain}/courses/basic-html/thumbnails/lesson-0.svg`;
     const imageAlt = "The thumbnail for the first lesson in James Simon's Basic HTML Course.";
 
     return (
